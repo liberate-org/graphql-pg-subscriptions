@@ -1,8 +1,8 @@
 {
-  "name": "graphql-pg-subscriptions",
+  "name": "@liberate-org/graphql-pg-subscriptions",
   "version": "3.2.6",
   "description": "A graphql subscriptions implementation using postgres and apollo's graphql-subscriptions.",
-  "homepage": "https://github.com/siamahnaf/graphql-pg-subscriptions",
+  "homepage": "https://github.com/liberate-org/graphql-pg-subscriptions",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -18,6 +18,9 @@
     "email": "mail@siamahnaf.com",
     "url": "https://www.siamahnaf.com"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/liberate-org"
+  },
   "keywords": [
     "pubsub",
     "pub/sub for pg",
@@ -29,8 +32,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "directory": "https://github.com/siamahnaf/graphql-pg-subscriptions",
-    "url": "https://github.com/siamahnaf/graphql-pg-subscriptions"
+    "url": "git+https://github.com/liberate-org/graphql-pg-subscriptions.git"
   },
   "peerDependencies": {
     "graphql": "latest"
@@ -45,6 +47,7 @@
     "@types/pg": "^8.11.6",
     "graphql": "^16.8.1",
     "pg": "^8.11.5",
+    "rimraf": "^6.0.1",
     "typescript": "^5.4.5"
   }
 }
