@@ -1,6 +1,6 @@
 {
   "name": "@liberate-org/graphql-pg-subscriptions",
-  "version": "3.2.6",
+  "version": "3.2.8",
   "description": "A graphql subscriptions implementation using postgres and apollo's graphql-subscriptions.",
   "homepage": "https://github.com/liberate-org/graphql-pg-subscriptions",
   "main": "dist/cjs/index.js",
@@ -11,7 +11,8 @@
   "scripts": {
     "build": "rimraf dist && npm run build:esm && npm run build.cjs",
     "build:esm": "tsc",
-    "build.cjs": "tsc --module CommonJS --outDir dist/cjs"
+    "build.cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "publish": "npm run build && npm publish"
   },
   "author": {
     "name": "Siam Ahnaf",

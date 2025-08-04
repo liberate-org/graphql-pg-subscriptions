@@ -18,20 +18,12 @@ function eventEmitterAsyncIterator<T>(
     const pushValue = async ({ payload: event }: { payload: T }) => {
         const query = `SELECT payload FROM pubsub_payloads WHERE id = $1`;
         const res = await client.query(query, [event]);
-
-        if (res.rows.length === 0) {
-            // Event was already processed and deleted by another consumer
-            return;
-        }
-
         const value = commonMessageHandler(res.rows[0].payload);
         if (pullQueue.length !== 0) {
             pullQueue.shift()!({ value, done: false });
         } else {
             pushQueue.push(value);
         }
-        const deleteQuery = `DELETE FROM pubsub_payloads WHERE id = $1`;
-        await client.query(deleteQuery, [event]);
     };
 
     const pullValue = () => {
